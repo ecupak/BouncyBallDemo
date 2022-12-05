@@ -22,7 +22,7 @@ private:
 	Surface* screen;
 	keyState leftKey;
 	keyState rightKey;
-	Ball ball;
+	Ball* ball;
 };
 
 }; // namespace Tmpl8

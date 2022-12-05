@@ -11,7 +11,7 @@ namespace Tmpl8
 	// -----------------------------------------------------------
 	void Game::Init()
 	{
-		// this->ball = new Ball(screen); <-- want to do this, but get message that Game::Game(void) references a deleted function.
+		this->ball = new Ball(screen);
 	}
 
 	// -----------------------------------------------------------
@@ -76,8 +76,8 @@ namespace Tmpl8
 		screen->Clear(0);
 
 		// Update and draw ball position.
-		ball.update(leftKey, rightKey);
-		ball.draw(screen); // <-- want to put in class Ball.
+		ball->update(leftKey, rightKey);
+		// ball.draw(screen);
 
 		screen->Print("Left/Right arrow keys to move.", 20, 20, 0xffffff);
 		screen->Print("When stuck to a wall, quickly press the other direction to do a strong wall bounce.", 20, 40, 0xffffff);

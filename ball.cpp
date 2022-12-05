@@ -8,15 +8,15 @@ namespace Tmpl8
 	Sprite ball(new Surface("assets/squishyBall.png"), 15);
 
 
+	// Default constructor to avoid error that none exists.
 	Ball::Ball() {}
 
-
-	/* Can't do below - Game::Game(void) references deleted function.
+	
+	// The important constructor.
 	Ball::Ball(Surface* screen) :
 		m_screen{ screen }
 	{
 	}
-	*/
 
 
 	void Ball::update(keyState& leftKey, keyState& rightKey)
@@ -35,6 +35,8 @@ namespace Tmpl8
 		{
 			Ball::updateWall(leftKey, rightKey);
 		}
+
+		Ball::internalDraw();
 	}
 
 
@@ -377,6 +379,12 @@ namespace Tmpl8
 		ball.Draw(screen, position.x, position.y);
 	}
 	
+
+	void Ball::internalDraw()
+	{
+		ball.Draw(m_screen, position.x, position.y);
+	}
+
 
 	/*
 		This section deals with changing the sprite image / frame.	

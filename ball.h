@@ -29,9 +29,10 @@ namespace Tmpl8 {
 	{
 	public:		
 		Ball();
-		// Ball(Surface* screen); <-- can't do.
+		Ball(Surface* screen);
 		void update(keyState& leftKey, keyState& rightKey);				
 		void draw(Surface* screen);
+		void internalDraw();
 
 	private:
 		/* METHODS */
@@ -73,7 +74,7 @@ namespace Tmpl8 {
 		/* ATTRIBUTES */
 
 		// Screen reference.
-		// Surface* m_screen;
+		Surface* m_screen;
 
 		// State change tracker.
 		Mode mode{ Mode::AIR };
